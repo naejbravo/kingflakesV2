@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components'
+const socialMedia = ["instagram", "whatsapp", "facebook", "google"];
+---
+<footer>
+    {
+        socialMedia.map((item) => {
+            return <Icon name={`mdi:${item}`} class="social"/>
+        })
+    }
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing2);
+        color: var(--color100);
+        cursor: pointer;
+        
+        & .social {
+            width: 32px;
+            height: 32px;
+            transition: all .3s ease;
+            &:hover {
+                color: var(--accent);
+                transition: all 0.3s ease;
+            }
+        }
+    }
+</style>
+

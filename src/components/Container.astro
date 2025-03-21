@@ -1,0 +1,19 @@
+<div class="container">
+    <slot />
+</div>
+
+<style>
+    .container {
+        width: var(--container-width-100);
+        max-width: var(--container-max-width);
+        min-height: var(--container-height-screen);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 auto;
+        position: relative;
+        background: var(--bg);
+    }
+</style>

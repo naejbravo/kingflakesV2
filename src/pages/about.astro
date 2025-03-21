@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import { Icon } from 'astro-icon/components';
+import Header from '@components/Header.astro';
+import ContainerItem from '@components/ContainerItem.astro';
+import AboutItem from '@components/AboutItem.astro';
+
+const content = [
+    {
+        title: 'Acerca de Nosotros 🍽️👑',
+        subtitle: '¡Bienvenido a King Flakes, donde cada bocado es una experiencia real! 👑✨',
+        description: 'En King Flakes creemos que el desayuno es la comida más importante (y deliciosa) del día. Por eso hemos creado un concepto único en el que los cereales, los pancakes y los platillos inspirados en el desayuno son los protagonistas. Ya sea que anheles un tazón clásico de cereales crujientes, una obra maestra de waffles gourmet o un batido refrescante, aquí servimos diversión, sabor y nostalgia en cada plato.'
+    },
+    {
+        title: 'Nuestra Historia 📖',
+        subtitle: "",
+        description: 'King Flakes nació de una idea sencilla pero poderosa: ¿por qué el desayuno debería limitarse solo a la mañana? Nuestros fundadores, apasionados por la comida y fanáticos de los cereales, quisieron crear un espacio donde los amantes del desayuno pudieran disfrutar de sus platillos favoritos en cualquier momento del día. Con una mezcla de creatividad, ingredientes de alta calidad y un ambiente divertido, King Flakes se ha convertido en el destino ideal para los amantes de los cereales y el desayuno.'
+    },
+    {
+        title: '¿Qué Nos Hace Especiales? 🌟',
+        subtitle: "",
+        description: '🥣 Infinitas Combinaciones de Cereal – Elige entre una gran variedad de cereales clásicos e internacionales, combínalos con distintos tipos de leche y agrégales tus toppings favoritos.  🥞 Desayuno Todo el Día – Desde esponjosos pancakes y crujientes waffles hasta bowls de frutas y sándwiches matutinos, mantenemos la magia del desayuno en cada momento.  🍓 Ingredientes Frescos y de Calidad – Cada plato está hecho con amor y con los mejores ingredientes para ofrecerte un sabor inolvidable.  🎉 Ambiente Único y Divertido – Un espacio vibrante donde la nostalgia y la creatividad se encuentran en cada rincón.'
+    }
+]
+---
+<Layout>
+    <main>
+        <Container>
+            <Icon name="mdi:language" class="language"/>
+            <ContainerItem>
+                <Header />
+            </ContainerItem>
+            <ContainerItem>
+                {content.map((item, index) => (
+                    <AboutItem key={index} title={item.title} subtitle={item.subtitle} description={item.description} />
+                ))}
+            </ContainerItem>
+        </Container>
+    </main>
+</Layout>

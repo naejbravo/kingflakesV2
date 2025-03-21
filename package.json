@@ -9,6 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.3"
+    "@fontsource/lobster": "^5.2.5",
+    "@iconify-json/mdi": "^1.2.3",
+    "astro": "^5.5.3",
+    "astro-icon": "^1.1.5"
   }
 }

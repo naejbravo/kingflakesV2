@@ -1,3 +1,6 @@
+---
+import '@fontsource/lobster';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +8,104 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>King Flakes</title>
 	</head>
-	<body>
+	<body class="flex-column">
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	/*RESET*/
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+
+	* {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+	}
+
+	body {
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img, picture, video, canvas, svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	input, button, textarea, select {
+		font: inherit;
+	}
+
+	p, h1, h2, h3, h4, h5, h6 {
+		overflow-wrap: break-word;
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	ul li {
+		list-style: none;
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	p, h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	/*VARIABLES*/
+
+	:root {
+		/*COLORS*/
+		--color10: hsl(0, 0%, 11%);
+		--color30: hsl(0, 0%, 30%);
+		--color90: hsl(358, 100%, 95%);
+		--color100: hsl(0, 0%, 100%);
+		--accent: hsl(341, 52%, 44%);
+		--bg: linear-gradient(180deg, var(--color10) 50%, var(--color100) 400%);
+		/*FONTS*/
+		--ff: "Lobster", system-ui, sans-serif;
+		/*FONT-SIZES*/
+		--p: 1rem var(--ff);
+		--h1: 600 3rem/1.2em var(--ff);
+		--h2: 600 2rem/1.2em var(--ff);
+		/*SPACING*/
+		--spacing1: 4px;
+		--spacing2: 8px;
+		--spacing3: 16px;
+		--spacing4: 20px;
+		--spacing5: 40px;
+		--spacing6: 80px;
+		--spacing7: 160px;
+		/*OTHER*/
+		--container-max-width: 450px;
+		--container-width-100: 100%;
+		--container-height-screen: 100vh;
+	}
+
+	/*LANGUAGES ICON*/
+	.language {
+		position: absolute;	
+		top: 0;
+		left: 0;
+		z-index: 1;
+		margin: var(--spacing5) 0 0 var(--spacing5);
+		width: 28px;
+		height: 28px;
+		color: var(--color100);
+		cursor: pointer;
+		transition: all .3s ease;
+		&:hover {
+			color: var(--accent);
+			transition: all 0.3s ease;
+		}
 	}
 </style>
