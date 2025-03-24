@@ -1,11 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components'
-const socialMedia = ["instagram", "whatsapp", "facebook", "google"];
+const socialMedia = [{
+    name: "instagram", link: "https://instagram.com"},
+    {name: "whatsapp", link: "https://whatsapp.com"},
+    {name: "facebook", link: "https://facebook.com"},
+    {name: "google", link: "https://google.com"}];
 ---
 <footer>
     {
         socialMedia.map((item) => {
-            return <Icon name={`mdi:${item}`} class="social"/>
+            return <a href={item.link}><Icon name={`mdi:${item.name}`} class="social"/></a>
         })
     }
 </footer>
@@ -16,7 +20,10 @@ const socialMedia = ["instagram", "whatsapp", "facebook", "google"];
         justify-content: center;
         gap: var(--spacing2);
         color: var(--color100);
-        cursor: pointer;
+        max-height: 300px;
+        min-height: 200px;
+        height: 100%;
+        align-items: center;
         
         & .social {
             width: 32px;
@@ -27,6 +34,10 @@ const socialMedia = ["instagram", "whatsapp", "facebook", "google"];
                 transition: all 0.3s ease;
             }
         }
+
+        & a {
+            cursor: pointer;
+            color: var(--color100);
+        }
     }
 </style>
-

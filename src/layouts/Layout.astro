@@ -1,5 +1,6 @@
 ---
 import '@fontsource/lobster';
+import {ClientRouter} from 'astro:transitions';
 ---
 <!doctype html>
 <html lang="en">
@@ -8,6 +9,7 @@ import '@fontsource/lobster';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<ClientRouter />
 		<title>King Flakes</title>
 	</head>
 	<body class="flex-column">

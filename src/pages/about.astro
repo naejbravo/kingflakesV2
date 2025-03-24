@@ -5,6 +5,7 @@ import { Icon } from 'astro-icon/components';
 import Header from '@components/Header.astro';
 import ContainerItem from '@components/ContainerItem.astro';
 import AboutItem from '@components/AboutItem.astro';
+import Footer from '@components/Footer.astro';
 
 const content = [
     {
@@ -35,6 +36,9 @@ const content = [
                 {content.map((item, index) => (
                     <AboutItem key={index} title={item.title} subtitle={item.subtitle} description={item.description} />
                 ))}
+            </ContainerItem>
+            <ContainerItem>
+                <Footer />
             </ContainerItem>
         </Container>
     </main>
